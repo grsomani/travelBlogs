@@ -12,9 +12,9 @@ struct ArticlesService: NetworkRequest {
     
     typealias ModelType = [ArticleDataModel]
     
-    func loadArticles(endpoint: APIEndpoint, completion: @escaping ([ArticleDataModel]?, Error?) -> Void) {
+    func loadArticles(endpoint: APIEndpoint, completion: @escaping ([ArticleDataModel]?, NetworkError?) -> Void) {
         guard let request = endpoint.request else {
-            completion(nil, NSError())
+            completion(nil, .invalidRequest)
             return
         }
         self.load(request, withCompletion: completion)
