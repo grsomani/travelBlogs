@@ -15,6 +15,7 @@
 		0444B59F24ACC87E0093F974 /* travelBlogsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444B59E24ACC87E0093F974 /* travelBlogsTests.swift */; };
 		0444B5B024ACD2E70093F974 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444B5AF24ACD2E70093F974 /* Endpoint.swift */; };
 		0444B5B224ACD4090093F974 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444B5B124ACD4090093F974 /* APIEndpoint.swift */; };
+		0444B5B424ACD6480093F974 /* APIEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444B5B324ACD6480093F974 /* APIEndpointTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		0444B5A024ACC87E0093F974 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0444B5AF24ACD2E70093F974 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		0444B5B124ACD4090093F974 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		0444B5B324ACD6480093F974 /* APIEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpointTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				0444B59E24ACC87E0093F974 /* travelBlogsTests.swift */,
+				0444B5B324ACD6480093F974 /* APIEndpointTests.swift */,
 				0444B5A024ACC87E0093F974 /* Info.plist */,
 			);
 			path = travelBlogsTests;
@@ -255,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0444B59F24ACC87E0093F974 /* travelBlogsTests.swift in Sources */,
+				0444B5B424ACD6480093F974 /* APIEndpointTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,7 +411,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = travelBlogs/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/travelBlogs/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -425,7 +429,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = travelBlogs/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/travelBlogs/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
