@@ -11,4 +11,5 @@ import Foundation
 enum NetworkError: Error {
     case noData
     case parsingFailure
+    case invalidRequest
 }
