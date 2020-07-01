@@ -77,12 +77,10 @@
 		0444B58624ACC87C0093F974 /* travelBlogs */ = {
 			isa = PBXGroup;
 			children = (
-				0444B58724ACC87C0093F974 /* AppDelegate.swift */,
-				0444B58B24ACC87C0093F974 /* ViewController.swift */,
-				0444B58D24ACC87C0093F974 /* Main.storyboard */,
-				0444B59024ACC87E0093F974 /* Assets.xcassets */,
-				0444B59224ACC87E0093F974 /* LaunchScreen.storyboard */,
-				0444B59524ACC87E0093F974 /* Info.plist */,
+				0444B5A924ACCDFC0093F974 /* AppDelegate */,
+				0444B5AB24ACCF120093F974 /* Features */,
+				0444B5AA24ACCE2C0093F974 /* Resourses */,
+				0444B5AC24ACCF390093F974 /* Supporting Files */,
 			);
 			path = travelBlogs;
 			sourceTree = "<group>";
@@ -94,6 +92,40 @@
 				0444B5A024ACC87E0093F974 /* Info.plist */,
 			);
 			path = travelBlogsTests;
+			sourceTree = "<group>";
+		};
+		0444B5A924ACCDFC0093F974 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				0444B58724ACC87C0093F974 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		0444B5AA24ACCE2C0093F974 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				0444B59024ACC87E0093F974 /* Assets.xcassets */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
+		0444B5AB24ACCF120093F974 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				0444B58B24ACC87C0093F974 /* ViewController.swift */,
+				0444B58D24ACC87C0093F974 /* Main.storyboard */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		0444B5AC24ACCF390093F974 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0444B59224ACC87E0093F974 /* LaunchScreen.storyboard */,
+				0444B59524ACC87E0093F974 /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
