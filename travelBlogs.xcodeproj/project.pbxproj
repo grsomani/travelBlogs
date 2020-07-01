@@ -13,6 +13,8 @@
 		0444B59124ACC87E0093F974 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0444B59024ACC87E0093F974 /* Assets.xcassets */; };
 		0444B59424ACC87E0093F974 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0444B59224ACC87E0093F974 /* LaunchScreen.storyboard */; };
 		0444B59F24ACC87E0093F974 /* travelBlogsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444B59E24ACC87E0093F974 /* travelBlogsTests.swift */; };
+		0444B5B024ACD2E70093F974 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444B5AF24ACD2E70093F974 /* Endpoint.swift */; };
+		0444B5B224ACD4090093F974 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444B5B124ACD4090093F974 /* APIEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		0444B59A24ACC87E0093F974 /* travelBlogsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = travelBlogsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0444B59E24ACC87E0093F974 /* travelBlogsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = travelBlogsTests.swift; sourceTree = "<group>"; };
 		0444B5A024ACC87E0093F974 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0444B5AF24ACD2E70093F974 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		0444B5B124ACD4090093F974 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 			children = (
 				0444B5A924ACCDFC0093F974 /* AppDelegate */,
 				0444B5AB24ACCF120093F974 /* Features */,
+				0444B5AD24ACD2B90093F974 /* Network */,
 				0444B5AA24ACCE2C0093F974 /* Resourses */,
 				0444B5AC24ACCF390093F974 /* Supporting Files */,
 			);
@@ -126,6 +131,15 @@
 				0444B59524ACC87E0093F974 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0444B5AD24ACD2B90093F974 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0444B5AF24ACD2E70093F974 /* Endpoint.swift */,
+				0444B5B124ACD4090093F974 /* APIEndpoint.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,7 +244,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0444B58C24ACC87C0093F974 /* ViewController.swift in Sources */,
+				0444B5B024ACD2E70093F974 /* Endpoint.swift in Sources */,
 				0444B58824ACC87C0093F974 /* AppDelegate.swift in Sources */,
+				0444B5B224ACD4090093F974 /* APIEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
