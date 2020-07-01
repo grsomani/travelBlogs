@@ -20,20 +20,20 @@ protocol NetworkRequest {
     
     
     /// Performs a load operation to fetch data from network
-    func load(_ request: URLRequest, withCompletion completion: @escaping (ModelType?, Error?) -> Void)
+    func load(_ request: URLRequest, withCompletion completion: @escaping (ModelType?, NetworkError?) -> Void)
 }
 
 extension NetworkRequest {
     
-    func load(_ request: URLRequest, withCompletion completion: @escaping (ModelType?, Error?) -> Void) {
+    func load(_ request: URLRequest, withCompletion completion: @escaping (ModelType?, NetworkError?) -> Void) {
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: .main)
         let task = session.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
             guard let data = data else {
-                completion(nil, NSError())
+                completion(nil, .noData)
                 return
             }
             guard let decodedData = self.decode(data) else {
-                completion(nil, NSError())
+                completion(nil, .parsingFailure)
                 return
             }
             completion(decodedData, nil)
