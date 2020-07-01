@@ -19,6 +19,7 @@
 		0444B5B624ACE5120093F974 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444B5B524ACE5120093F974 /* NetworkRequest.swift */; };
 		0444B5B824ACE9FB0093F974 /* ArticlesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444B5B724ACE9FB0093F974 /* ArticlesService.swift */; };
 		0444B5BA24ACEDA90093F974 /* ArticleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444B5B924ACEDA90093F974 /* ArticleDataModel.swift */; };
+		044AEB7124ACF15F00F9FC0F /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044AEB7024ACF15F00F9FC0F /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		0444B5B524ACE5120093F974 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		0444B5B724ACE9FB0093F974 /* ArticlesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesService.swift; sourceTree = "<group>"; };
 		0444B5B924ACEDA90093F974 /* ArticleDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDataModel.swift; sourceTree = "<group>"; };
+		044AEB7024ACF15F00F9FC0F /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				0444B5AF24ACD2E70093F974 /* Endpoint.swift */,
 				0444B5B124ACD4090093F974 /* APIEndpoint.swift */,
 				0444B5B524ACE5120093F974 /* NetworkRequest.swift */,
+				044AEB7024ACF15F00F9FC0F /* NetworkError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0444B5B824ACE9FB0093F974 /* ArticlesService.swift in Sources */,
+				044AEB7124ACF15F00F9FC0F /* NetworkError.swift in Sources */,
 				0444B58C24ACC87C0093F974 /* ViewController.swift in Sources */,
 				0444B5B024ACD2E70093F974 /* Endpoint.swift in Sources */,
 				0444B58824ACC87C0093F974 /* AppDelegate.swift in Sources */,
