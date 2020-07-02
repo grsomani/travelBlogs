@@ -87,7 +87,7 @@ struct ArticleViewModel {
             return "\(round(thousand*10)/10)K"
         }
         else {
-            return "\(self)"
+            return "\(input)"
         }
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0423318824AE3D6800E711E5 /* ArticleViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0423318724AE3D6800E711E5 /* ArticleViewModelTests.swift */; };
 		0444B58824ACC87C0093F974 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444B58724ACC87C0093F974 /* AppDelegate.swift */; };
 		0444B58C24ACC87C0093F974 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444B58B24ACC87C0093F974 /* ArticleViewController.swift */; };
 		0444B58F24ACC87C0093F974 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0444B58D24ACC87C0093F974 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		00F665A649E7BADF444F5F29 /* Pods-travelBlogsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-travelBlogsTests.debug.xcconfig"; path = "Target Support Files/Pods-travelBlogsTests/Pods-travelBlogsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0423318724AE3D6800E711E5 /* ArticleViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModelTests.swift; sourceTree = "<group>"; };
 		0444B58424ACC87C0093F974 /* travelBlogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = travelBlogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0444B58724ACC87C0093F974 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0444B58B24ACC87C0093F974 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0423318524AE3D1F00E711E5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04632FB824ADF13C009C9AA8 /* ArticleTableViewCell.swift */,
+				0444B58B24ACC87C0093F974 /* ArticleViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0423318624AE3D3300E711E5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0444B5B724ACE9FB0093F974 /* ArticlesService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		0444B57B24ACC87C0093F974 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +151,7 @@
 				044AEB7224ADAF7000F9FC0F /* ArticleDataModelTests.swift */,
 				0444B5B324ACD6480093F974 /* APIEndpointTests.swift */,
 				044AEB6E24ACF0C000F9FC0F /* ArticlesServiceTests.swift */,
+				0423318724AE3D6800E711E5 /* ArticleViewModelTests.swift */,
 				0444B5A024ACC87E0093F974 /* Info.plist */,
 			);
 			path = travelBlogsTests;
@@ -157,7 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				0444B5BB24ACEDAD0093F974 /* Articles */,
-				0444B58B24ACC87C0093F974 /* ArticleViewController.swift */,
 				0444B58D24ACC87C0093F974 /* Main.storyboard */,
 			);
 			path = Features;
@@ -187,10 +206,10 @@
 		0444B5BB24ACEDAD0093F974 /* Articles */ = {
 			isa = PBXGroup;
 			children = (
+				0423318624AE3D3300E711E5 /* Service */,
+				0423318524AE3D1F00E711E5 /* View */,
 				04632FBA24ADF4B0009C9AA8 /* View Model */,
 				0444B5BC24ACEDB50093F974 /* Data Model */,
-				0444B5B724ACE9FB0093F974 /* ArticlesService.swift */,
-				04632FB824ADF13C009C9AA8 /* ArticleTableViewCell.swift */,
 			);
 			path = Articles;
 			sourceTree = "<group>";
@@ -428,6 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				044AEB7324ADAF7000F9FC0F /* ArticleDataModelTests.swift in Sources */,
+				0423318824AE3D6800E711E5 /* ArticleViewModelTests.swift in Sources */,
 				044AEB6F24ACF0C000F9FC0F /* ArticlesServiceTests.swift in Sources */,
 				0444B5B424ACD6480093F974 /* APIEndpointTests.swift in Sources */,
 			);
