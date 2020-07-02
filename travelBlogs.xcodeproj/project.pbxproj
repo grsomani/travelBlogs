@@ -22,6 +22,8 @@
 		044AEB7124ACF15F00F9FC0F /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044AEB7024ACF15F00F9FC0F /* NetworkError.swift */; };
 		044AEB7324ADAF7000F9FC0F /* ArticleDataModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044AEB7224ADAF7000F9FC0F /* ArticleDataModelTests.swift */; };
 		044AEB7524ADB41500F9FC0F /* articles.json in Resources */ = {isa = PBXBuildFile; fileRef = 044AEB7424ADB41500F9FC0F /* articles.json */; };
+		04632FB924ADF13C009C9AA8 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04632FB824ADF13C009C9AA8 /* ArticleTableViewCell.swift */; };
+		04632FBC24ADF4CC009C9AA8 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04632FBB24ADF4CC009C9AA8 /* ArticleViewModel.swift */; };
 		6FC76468E1EF32CFBAE617CB /* Pods_travelBlogsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B608984229CA136C37F17069 /* Pods_travelBlogsTests.framework */; };
 		CED00FB33C445BF589CA95C8 /* Pods_travelBlogs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E92ECA83B04F51835B9867E4 /* Pods_travelBlogs.framework */; };
 /* End PBXBuildFile section */
@@ -57,6 +59,8 @@
 		044AEB7024ACF15F00F9FC0F /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		044AEB7224ADAF7000F9FC0F /* ArticleDataModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDataModelTests.swift; sourceTree = "<group>"; };
 		044AEB7424ADB41500F9FC0F /* articles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = articles.json; sourceTree = "<group>"; };
+		04632FB824ADF13C009C9AA8 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		04632FBB24ADF4CC009C9AA8 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
 		269118588EAD5764D48E5AB8 /* Pods-travelBlogs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-travelBlogs.debug.xcconfig"; path = "Target Support Files/Pods-travelBlogs/Pods-travelBlogs.debug.xcconfig"; sourceTree = "<group>"; };
 		5FDDF26E1BF3716827302467 /* Pods-travelBlogsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-travelBlogsTests.release.xcconfig"; path = "Target Support Files/Pods-travelBlogsTests/Pods-travelBlogsTests.release.xcconfig"; sourceTree = "<group>"; };
 		B608984229CA136C37F17069 /* Pods_travelBlogsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_travelBlogsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,8 +181,10 @@
 		0444B5BB24ACEDAD0093F974 /* Articles */ = {
 			isa = PBXGroup;
 			children = (
+				04632FBA24ADF4B0009C9AA8 /* View Model */,
 				0444B5BC24ACEDB50093F974 /* Data Model */,
 				0444B5B724ACE9FB0093F974 /* ArticlesService.swift */,
+				04632FB824ADF13C009C9AA8 /* ArticleTableViewCell.swift */,
 			);
 			path = Articles;
 			sourceTree = "<group>";
@@ -189,6 +195,14 @@
 				0444B5B924ACEDA90093F974 /* ArticleDataModel.swift */,
 			);
 			path = "Data Model";
+			sourceTree = "<group>";
+		};
+		04632FBA24ADF4B0009C9AA8 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				04632FBB24ADF4CC009C9AA8 /* ArticleViewModel.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 		6CA7C2A3C92BEE7E50A606E5 /* Frameworks */ = {
@@ -381,7 +395,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0444B5B824ACE9FB0093F974 /* ArticlesService.swift in Sources */,
+				04632FB924ADF13C009C9AA8 /* ArticleTableViewCell.swift in Sources */,
 				044AEB7124ACF15F00F9FC0F /* NetworkError.swift in Sources */,
+				04632FBC24ADF4CC009C9AA8 /* ArticleViewModel.swift in Sources */,
 				0444B58C24ACC87C0093F974 /* ArticleViewController.swift in Sources */,
 				0444B5B024ACD2E70093F974 /* Endpoint.swift in Sources */,
 				0444B58824ACC87C0093F974 /* AppDelegate.swift in Sources */,
