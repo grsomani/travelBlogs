@@ -27,6 +27,7 @@ class ArticleTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.userImageView.layer.cornerRadius = self.userImageView.frame.size.width / 2.0
     }
     
     func assign(viewModel: ArticleViewModel) {
@@ -35,6 +36,7 @@ class ArticleTableViewCell: UITableViewCell {
     }
     
     private func updateUI() {
+        self.updateUserImage()
         self.userNameLbl.text = self.viewModel?.userName ?? ""
         self.userDesignationLbl.text = self.viewModel?.designation ?? ""
         self.articleTimeLbl.text = self.viewModel?.timeElapsed ?? ""
@@ -47,12 +49,27 @@ class ArticleTableViewCell: UITableViewCell {
         self.articleCommentLbl.text = self.viewModel?.numberOfComments ?? ""
     }
     
+    private func updateUserImage() {
+        if let imageURL = self.viewModel?.userImageURL {
+            self.userImageView.image = nil
+            ImageFetcher().downloadImage(url: imageURL) { (image, url, _) in
+                if url == imageURL {
+                    self.userImageView.image = image
+                }
+            }
+        }
+    }
+    
     private func updateArticleImage() {
-        if let _ = self.viewModel?.articleImageURL {
+        if let imageURL = self.viewModel?.articleImageURL {
             //Show image
             self.articleImageView.isHidden = false
             self.articleImageView.image = nil
-            self.articleImageView.backgroundColor = .gray
+            ImageFetcher().downloadImage(url: imageURL) { (image, url, _) in
+                if url == imageURL {
+                    self.articleImageView.image = image
+                }
+            }
         } else {
             self.articleImageView.isHidden = true
         }
