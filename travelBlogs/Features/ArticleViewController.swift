@@ -65,12 +65,17 @@ extension ArticleViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ArticleTableViewCell.reuseIdentifier) else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ArticleTableViewCell.reuseIdentifier) as? ArticleTableViewCell else {
             return UITableViewCell()
         }
+        
+        if articlesList.count > indexPath.row {
+            let currentArticleData = self.articlesList[indexPath.row]
+            let viewModel = ArticleViewModel(dataModel: currentArticleData)
+            cell.assign(viewModel: viewModel)
+        }
+        
         cell.selectionStyle = .none
         return cell
     }
-    
-    
 }
