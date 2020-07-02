@@ -65,8 +65,10 @@ extension ArticleViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.backgroundColor = .red
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ArticleTableViewCell.reuseIdentifier) else {
+            return UITableViewCell()
+        }
+        cell.selectionStyle = .none
         return cell
     }
     
