@@ -8,11 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0444B58824ACC87C0093F974 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444B58724ACC87C0093F974 /* AppDelegate.swift */; };
-		0444B58C24ACC87C0093F974 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444B58B24ACC87C0093F974 /* ViewController.swift */; };
+		0444B58C24ACC87C0093F974 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444B58B24ACC87C0093F974 /* ArticleViewController.swift */; };
 		0444B58F24ACC87C0093F974 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0444B58D24ACC87C0093F974 /* Main.storyboard */; };
 		0444B59124ACC87E0093F974 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0444B59024ACC87E0093F974 /* Assets.xcassets */; };
 		0444B59424ACC87E0093F974 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0444B59224ACC87E0093F974 /* LaunchScreen.storyboard */; };
-		0444B59F24ACC87E0093F974 /* travelBlogsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444B59E24ACC87E0093F974 /* travelBlogsTests.swift */; };
 		0444B5B024ACD2E70093F974 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444B5AF24ACD2E70093F974 /* Endpoint.swift */; };
 		0444B5B224ACD4090093F974 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444B5B124ACD4090093F974 /* APIEndpoint.swift */; };
 		0444B5B424ACD6480093F974 /* APIEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444B5B324ACD6480093F974 /* APIEndpointTests.swift */; };
@@ -41,13 +40,12 @@
 		00F665A649E7BADF444F5F29 /* Pods-travelBlogsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-travelBlogsTests.debug.xcconfig"; path = "Target Support Files/Pods-travelBlogsTests/Pods-travelBlogsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0444B58424ACC87C0093F974 /* travelBlogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = travelBlogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0444B58724ACC87C0093F974 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0444B58B24ACC87C0093F974 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0444B58B24ACC87C0093F974 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		0444B58E24ACC87C0093F974 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0444B59024ACC87E0093F974 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0444B59324ACC87E0093F974 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0444B59524ACC87E0093F974 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0444B59A24ACC87E0093F974 /* travelBlogsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = travelBlogsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0444B59E24ACC87E0093F974 /* travelBlogsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = travelBlogsTests.swift; sourceTree = "<group>"; };
 		0444B5A024ACC87E0093F974 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0444B5AF24ACD2E70093F974 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		0444B5B124ACD4090093F974 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				044AEB7424ADB41500F9FC0F /* articles.json */,
-				0444B59E24ACC87E0093F974 /* travelBlogsTests.swift */,
 				044AEB7224ADAF7000F9FC0F /* ArticleDataModelTests.swift */,
 				0444B5B324ACD6480093F974 /* APIEndpointTests.swift */,
 				044AEB6E24ACF0C000F9FC0F /* ArticlesServiceTests.swift */,
@@ -151,9 +148,8 @@
 			isa = PBXGroup;
 			children = (
 				0444B5BB24ACEDAD0093F974 /* Articles */,
-				0444B58B24ACC87C0093F974 /* ViewController.swift */,
+				0444B58B24ACC87C0093F974 /* ArticleViewController.swift */,
 				0444B58D24ACC87C0093F974 /* Main.storyboard */,
-				0444B5B724ACE9FB0093F974 /* ArticlesService.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -182,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				0444B5BC24ACEDB50093F974 /* Data Model */,
+				0444B5B724ACE9FB0093F974 /* ArticlesService.swift */,
 			);
 			path = Articles;
 			sourceTree = "<group>";
@@ -385,7 +382,7 @@
 			files = (
 				0444B5B824ACE9FB0093F974 /* ArticlesService.swift in Sources */,
 				044AEB7124ACF15F00F9FC0F /* NetworkError.swift in Sources */,
-				0444B58C24ACC87C0093F974 /* ViewController.swift in Sources */,
+				0444B58C24ACC87C0093F974 /* ArticleViewController.swift in Sources */,
 				0444B5B024ACD2E70093F974 /* Endpoint.swift in Sources */,
 				0444B58824ACC87C0093F974 /* AppDelegate.swift in Sources */,
 				0444B5BA24ACEDA90093F974 /* ArticleDataModel.swift in Sources */,
@@ -400,7 +397,6 @@
 			files = (
 				044AEB7324ADAF7000F9FC0F /* ArticleDataModelTests.swift in Sources */,
 				044AEB6F24ACF0C000F9FC0F /* ArticlesServiceTests.swift in Sources */,
-				0444B59F24ACC87E0093F974 /* travelBlogsTests.swift in Sources */,
 				0444B5B424ACD6480093F974 /* APIEndpointTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
