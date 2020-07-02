@@ -1,4 +1,5 @@
 PODS:
+  - MKProgress (1.1.0)
   - OHHTTPStubs/Core (9.0.0)
   - OHHTTPStubs/Default (9.0.0):
     - OHHTTPStubs/Core
@@ -12,17 +13,24 @@ PODS:
   - OHHTTPStubs/OHPathHelpers (9.0.0)
   - OHHTTPStubs/Swift (9.0.0):
     - OHHTTPStubs/Default
+  - ReachabilitySwift (5.0.0)
 
 DEPENDENCIES:
+  - MKProgress
   - OHHTTPStubs/Swift
+  - ReachabilitySwift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - MKProgress
     - OHHTTPStubs
+    - ReachabilitySwift
 
 SPEC CHECKSUMS:
+  MKProgress: 260d166200323f3d991190a73ab2dc3a04b0f52f
   OHHTTPStubs: cb29d2a9d09a828ecb93349a2b0c64f99e0db89f
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
 
-PODFILE CHECKSUM: 6f77d5225af9eac078a4369aa5417ddcaa428e87
+PODFILE CHECKSUM: bc28f7acfd1ac70f78a1eb9eb4fd5f884b3417eb
 
 COCOAPODS: 1.7.2

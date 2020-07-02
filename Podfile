@@ -6,6 +6,8 @@ target 'travelBlogs' do
   use_frameworks!
 
   # Pods for travelBlogs
+  pod 'MKProgress'
+  pod 'ReachabilitySwift'
   pod 'OHHTTPStubs/Swift'
 
   target 'travelBlogsTests' do
