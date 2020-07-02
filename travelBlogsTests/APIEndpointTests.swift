@@ -32,4 +32,8 @@ class APIEndpointTests: XCTestCase {
         XCTAssertEqual(userEndpoint.path, "/jet2/api/v1/users")
         XCTAssertEqual(userEndpoint.query.count, 2)
     }
+    
+    func testInvalidRequest() {
+        
+    }
 }
