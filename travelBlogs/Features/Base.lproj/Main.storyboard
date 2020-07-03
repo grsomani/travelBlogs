@@ -206,7 +206,7 @@
         <scene sceneID="bLp-fC-4Fy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="01a-a0-ePE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="wQp-Bs-Fpj"/>
+                    <tabBarItem key="tabBarItem" image="book-simple-7" id="wQp-Bs-Fpj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BGg-65-wdT">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -225,7 +225,7 @@
         <scene sceneID="EBq-tv-mff">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cFN-TK-nxD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="OG4-3d-ej1"/>
+                    <tabBarItem key="tabBarItem" image="circle-user-7" id="OG4-3d-ej1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9DL-aq-Ee7">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -248,4 +248,8 @@
             <point key="canvasLocation" x="1086.9565217391305" y="515.625"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="book-simple-7" width="29" height="30"/>
+        <image name="circle-user-7" width="30" height="30"/>
+    </resources>
 </document>
