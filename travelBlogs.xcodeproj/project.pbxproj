@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0423318824AE3D6800E711E5 /* ArticleViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0423318724AE3D6800E711E5 /* ArticleViewModelTests.swift */; };
 		0423318C24AFAECF00E711E5 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0423318B24AFAECF00E711E5 /* UsersViewController.swift */; };
+		042331B324AFB34500E711E5 /* travelBlogs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 042331B124AFB34500E711E5 /* travelBlogs.xcdatamodeld */; };
 		0444B58824ACC87C0093F974 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444B58724ACC87C0093F974 /* AppDelegate.swift */; };
 		0444B58C24ACC87C0093F974 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444B58B24ACC87C0093F974 /* ArticleViewController.swift */; };
 		0444B58F24ACC87C0093F974 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0444B58D24ACC87C0093F974 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		00F665A649E7BADF444F5F29 /* Pods-travelBlogsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-travelBlogsTests.debug.xcconfig"; path = "Target Support Files/Pods-travelBlogsTests/Pods-travelBlogsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0423318724AE3D6800E711E5 /* ArticleViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModelTests.swift; sourceTree = "<group>"; };
 		0423318B24AFAECF00E711E5 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		042331B224AFB34500E711E5 /* travelBlogs.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = travelBlogs.xcdatamodel; sourceTree = "<group>"; };
 		0444B58424ACC87C0093F974 /* travelBlogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = travelBlogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0444B58724ACC87C0093F974 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0444B58B24ACC87C0093F974 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		042331B024AFB32300E711E5 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				042331B124AFB34500E711E5 /* travelBlogs.xcdatamodeld */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
 		0444B57B24ACC87C0093F974 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +165,7 @@
 				04632FBD24ADFDE9009C9AA8 /* Extensions */,
 				0444B5A924ACCDFC0093F974 /* AppDelegate */,
 				0444B5AB24ACCF120093F974 /* Features */,
+				042331B024AFB32300E711E5 /* Core Data */,
 				0444B5AD24ACD2B90093F974 /* Network */,
 				0444B5AA24ACCE2C0093F974 /* Resourses */,
 				0444B5AC24ACCF390093F974 /* Supporting Files */,
@@ -459,6 +470,7 @@
 				04632FC124AE0593009C9AA8 /* ImageFetcher.swift in Sources */,
 				0444B5B224ACD4090093F974 /* APIEndpoint.swift in Sources */,
 				0444B5B624ACE5120093F974 /* NetworkRequest.swift in Sources */,
+				042331B324AFB34500E711E5 /* travelBlogs.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,6 +742,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		042331B124AFB34500E711E5 /* travelBlogs.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				042331B224AFB34500E711E5 /* travelBlogs.xcdatamodel */,
+			);
+			currentVersion = 042331B224AFB34500E711E5 /* travelBlogs.xcdatamodel */;
+			path = travelBlogs.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0444B57C24ACC87C0093F974 /* Project object */;
 }
