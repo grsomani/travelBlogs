@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0423318824AE3D6800E711E5 /* ArticleViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0423318724AE3D6800E711E5 /* ArticleViewModelTests.swift */; };
+		0423318C24AFAECF00E711E5 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0423318B24AFAECF00E711E5 /* UsersViewController.swift */; };
 		0444B58824ACC87C0093F974 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444B58724ACC87C0093F974 /* AppDelegate.swift */; };
 		0444B58C24ACC87C0093F974 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444B58B24ACC87C0093F974 /* ArticleViewController.swift */; };
 		0444B58F24ACC87C0093F974 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0444B58D24ACC87C0093F974 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		00F665A649E7BADF444F5F29 /* Pods-travelBlogsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-travelBlogsTests.debug.xcconfig"; path = "Target Support Files/Pods-travelBlogsTests/Pods-travelBlogsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0423318724AE3D6800E711E5 /* ArticleViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModelTests.swift; sourceTree = "<group>"; };
+		0423318B24AFAECF00E711E5 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		0444B58424ACC87C0093F974 /* travelBlogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = travelBlogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0444B58724ACC87C0093F974 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0444B58B24ACC87C0093F974 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,22 @@
 				0444B5B724ACE9FB0093F974 /* ArticlesService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		0423318924AFAEAC00E711E5 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				0423318A24AFAEB600E711E5 /* View */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		0423318A24AFAEB600E711E5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0423318B24AFAECF00E711E5 /* UsersViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		0444B57B24ACC87C0093F974 = {
@@ -177,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				0444B5BB24ACEDAD0093F974 /* Articles */,
+				0423318924AFAEAC00E711E5 /* Users */,
 				0444B58D24ACC87C0093F974 /* Main.storyboard */,
 			);
 			path = Features;
@@ -429,6 +448,7 @@
 			files = (
 				0444B5B824ACE9FB0093F974 /* ArticlesService.swift in Sources */,
 				04632FBF24ADFE01009C9AA8 /* Date+Extensions.swift in Sources */,
+				0423318C24AFAECF00E711E5 /* UsersViewController.swift in Sources */,
 				04632FB924ADF13C009C9AA8 /* ArticleTableViewCell.swift in Sources */,
 				044AEB7124ACF15F00F9FC0F /* NetworkError.swift in Sources */,
 				04632FBC24ADF4CC009C9AA8 /* ArticleViewModel.swift in Sources */,

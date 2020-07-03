@@ -186,10 +186,10 @@
             </objects>
             <point key="canvasLocation" x="129" y="156"/>
         </scene>
-        <!--View Controller-->
+        <!--Users View Controller-->
         <scene sceneID="C0T-np-ZYl">
             <objects>
-                <viewController id="Pqq-PC-oz7" sceneMemberID="viewController">
+                <viewController id="Pqq-PC-oz7" customClass="UsersViewController" customModule="travelBlogs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xVr-bg-wwl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -202,11 +202,11 @@
             </objects>
             <point key="canvasLocation" x="1997.1014492753625" y="515.625"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Articles-->
         <scene sceneID="bLp-fC-4Fy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="01a-a0-ePE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" image="book-simple-7" id="wQp-Bs-Fpj"/>
+                    <tabBarItem key="tabBarItem" title="Articles" image="book-simple-7" id="wQp-Bs-Fpj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BGg-65-wdT">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -221,11 +221,11 @@
             </objects>
             <point key="canvasLocation" x="1066.6666666666667" y="-179.46428571428569"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Users-->
         <scene sceneID="EBq-tv-mff">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cFN-TK-nxD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" image="circle-user-7" id="OG4-3d-ej1"/>
+                    <tabBarItem key="tabBarItem" title="Users" image="circle-user-7" id="OG4-3d-ej1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9DL-aq-Ee7">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
