@@ -10,6 +10,7 @@
 		0423318824AE3D6800E711E5 /* ArticleViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0423318724AE3D6800E711E5 /* ArticleViewModelTests.swift */; };
 		0423318C24AFAECF00E711E5 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0423318B24AFAECF00E711E5 /* UsersViewController.swift */; };
 		042331B324AFB34500E711E5 /* travelBlogs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 042331B124AFB34500E711E5 /* travelBlogs.xcdatamodeld */; };
+		042331B524AFC16000E711E5 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042331B424AFC16000E711E5 /* StoreManager.swift */; };
 		0444B58824ACC87C0093F974 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444B58724ACC87C0093F974 /* AppDelegate.swift */; };
 		0444B58C24ACC87C0093F974 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444B58B24ACC87C0093F974 /* ArticleViewController.swift */; };
 		0444B58F24ACC87C0093F974 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0444B58D24ACC87C0093F974 /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		0423318724AE3D6800E711E5 /* ArticleViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModelTests.swift; sourceTree = "<group>"; };
 		0423318B24AFAECF00E711E5 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		042331B224AFB34500E711E5 /* travelBlogs.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = travelBlogs.xcdatamodel; sourceTree = "<group>"; };
+		042331B424AFC16000E711E5 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		0444B58424ACC87C0093F974 /* travelBlogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = travelBlogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0444B58724ACC87C0093F974 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0444B58B24ACC87C0093F974 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				042331B124AFB34500E711E5 /* travelBlogs.xcdatamodeld */,
+				042331B424AFC16000E711E5 /* StoreManager.swift */,
 			);
 			path = "Core Data";
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				0444B5BA24ACEDA90093F974 /* ArticleDataModel.swift in Sources */,
 				04632FC124AE0593009C9AA8 /* ImageFetcher.swift in Sources */,
 				0444B5B224ACD4090093F974 /* APIEndpoint.swift in Sources */,
+				042331B524AFC16000E711E5 /* StoreManager.swift in Sources */,
 				0444B5B624ACE5120093F974 /* NetworkRequest.swift in Sources */,
 				042331B324AFB34500E711E5 /* travelBlogs.xcdatamodeld in Sources */,
 			);
