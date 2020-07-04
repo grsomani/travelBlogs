@@ -1,45 +1,45 @@
 //
-//  ArticlesServiceTests.swift
+//  UsersServiceTests.swift
 //  travelBlogsTests
 //
-//  Created by Ganesh Somani on 01/07/20.
+//  Created by Ganesh Somani on 04/07/20.
 //  Copyright © 2020 Ganesh Somani. All rights reserved.
 //
 
 import XCTest
-@testable import travelBlogs
 import OHHTTPStubs
+@testable import travelBlogs
 
-class ArticlesServiceTests: XCTestCase {
+class UsersServiceTests: XCTestCase {
 
-    var endpoint: Endpoint = APIEndpoint.article(page: 1)
-    var articleService: ArticlesService?
+    var endpoint: Endpoint = APIEndpoint.users(page: 1)
+    var usersService: UsersService?
     
     override func setUp() {
-        self.articleService = ArticlesService()
+        self.usersService = UsersService()
     }
 
     override func tearDown() {
-        self.articleService = nil
+        self.usersService = nil
     }
     
     func testValidResponse() {
-        var articlesList = [ArticleDataModel]()
+        var usersList = [UserDataModel]()
         stub(condition: isHost(endpoint.request?.url?.host ?? "")) { request in
             return HTTPStubsResponse(
-                fileAtPath: OHPathForFile("articles.json", type(of: self))!,
+                fileAtPath: OHPathForFile("usersList.json", type(of: self))!,
                 statusCode: 200,
                 headers: ["Content-Type":"application/json"]
             )
         }
         
         let expectation = self.expectation(description: "Fetching")
-        self.articleService?.loadArticles(endpoint: endpoint, completion: { (articles, error) in
-            articlesList = articles ?? []
+        self.usersService?.loadUsers(endpoint: endpoint, completion: { (users, error) in
+            usersList = users ?? []
             expectation.fulfill()
         })
         waitForExpectations(timeout: 5, handler: nil)
-        XCTAssertEqual(articlesList.count, 10)
+        XCTAssertEqual(usersList.count, 10)
     }
     
     func testParsingErrorResponse() {
@@ -50,8 +50,8 @@ class ArticlesServiceTests: XCTestCase {
         }
         
         let expectation = self.expectation(description: "Fetching")
-        self.articleService?.loadArticles(endpoint: endpoint, completion: { (articles, error) in
-            XCTAssertNil(articles)
+        self.usersService?.loadUsers(endpoint: endpoint, completion: { (users, error) in
+            XCTAssertNil(users)
             XCTAssertEqual(error!, NetworkError.parsingFailure)
             expectation.fulfill()
         })
@@ -66,11 +66,12 @@ class ArticlesServiceTests: XCTestCase {
         }
         
         let expectation = self.expectation(description: "Fetching")
-        self.articleService?.loadArticles(endpoint: endpoint, completion: { (articles, error) in
-            XCTAssertEqual(articles?.count ?? -1, 0)
+        self.usersService?.loadUsers(endpoint: endpoint, completion: { (users, error) in
+            XCTAssertEqual(users?.count ?? -1, 0)
             XCTAssertNil(error)
             expectation.fulfill()
         })
         waitForExpectations(timeout: 5, handler: nil)
     }
+
 }

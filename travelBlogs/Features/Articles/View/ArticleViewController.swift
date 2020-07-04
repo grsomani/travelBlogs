@@ -63,6 +63,7 @@ class ArticleViewController: UIViewController {
         do {
             let articles = try ArticleDbManager().retreiveArticles()
             guard let newArticles = articles else {
+                //ToDo: Show No Internet error.
                 return
             }
             
@@ -70,7 +71,7 @@ class ArticleViewController: UIViewController {
             self.currentPageNumber += 1
             self.articlesTable.reloadData()
         } catch {
-            print("Failue")
+            //ToDo: Show No Internet error.
         }
     }
 }

@@ -37,6 +37,10 @@
 		04632FBC24ADF4CC009C9AA8 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04632FBB24ADF4CC009C9AA8 /* ArticleViewModel.swift */; };
 		04632FBF24ADFE01009C9AA8 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04632FBE24ADFE01009C9AA8 /* Date+Extensions.swift */; };
 		04632FC124AE0593009C9AA8 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04632FC024AE0593009C9AA8 /* ImageFetcher.swift */; };
+		04C8BB2D24B081770088A157 /* UsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8BB2C24B081770088A157 /* UsersService.swift */; };
+		04C8BB3124B081B70088A157 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8BB3024B081B70088A157 /* UserDataModel.swift */; };
+		04C8BB3324B082310088A157 /* UsersServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8BB3224B082310088A157 /* UsersServiceTests.swift */; };
+		04C8BB3524B08BE80088A157 /* usersList.json in Resources */ = {isa = PBXBuildFile; fileRef = 04C8BB3424B08BE80088A157 /* usersList.json */; };
 		6FC76468E1EF32CFBAE617CB /* Pods_travelBlogsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B608984229CA136C37F17069 /* Pods_travelBlogsTests.framework */; };
 		CED00FB33C445BF589CA95C8 /* Pods_travelBlogs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E92ECA83B04F51835B9867E4 /* Pods_travelBlogs.framework */; };
 /* End PBXBuildFile section */
@@ -87,6 +91,10 @@
 		04632FBB24ADF4CC009C9AA8 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
 		04632FBE24ADFE01009C9AA8 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		04632FC024AE0593009C9AA8 /* ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
+		04C8BB2C24B081770088A157 /* UsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersService.swift; sourceTree = "<group>"; };
+		04C8BB3024B081B70088A157 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
+		04C8BB3224B082310088A157 /* UsersServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersServiceTests.swift; sourceTree = "<group>"; };
+		04C8BB3424B08BE80088A157 /* usersList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = usersList.json; sourceTree = "<group>"; };
 		269118588EAD5764D48E5AB8 /* Pods-travelBlogs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-travelBlogs.debug.xcconfig"; path = "Target Support Files/Pods-travelBlogs/Pods-travelBlogs.debug.xcconfig"; sourceTree = "<group>"; };
 		5FDDF26E1BF3716827302467 /* Pods-travelBlogsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-travelBlogsTests.release.xcconfig"; path = "Target Support Files/Pods-travelBlogsTests/Pods-travelBlogsTests.release.xcconfig"; sourceTree = "<group>"; };
 		B608984229CA136C37F17069 /* Pods_travelBlogsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_travelBlogsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +142,8 @@
 		0423318924AFAEAC00E711E5 /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				04C8BB2F24B081AC0088A157 /* Data Model */,
+				04C8BB2E24B081A00088A157 /* Service */,
 				0423318A24AFAEB600E711E5 /* View */,
 			);
 			path = Users;
@@ -209,10 +219,12 @@
 			isa = PBXGroup;
 			children = (
 				044AEB7424ADB41500F9FC0F /* articles.json */,
+				04C8BB3424B08BE80088A157 /* usersList.json */,
 				044AEB7224ADAF7000F9FC0F /* ArticleDataModelTests.swift */,
 				0444B5B324ACD6480093F974 /* APIEndpointTests.swift */,
 				044AEB6E24ACF0C000F9FC0F /* ArticlesServiceTests.swift */,
 				0423318724AE3D6800E711E5 /* ArticleViewModelTests.swift */,
+				04C8BB3224B082310088A157 /* UsersServiceTests.swift */,
 				0444B5A024ACC87E0093F974 /* Info.plist */,
 			);
 			path = travelBlogsTests;
@@ -298,6 +310,22 @@
 				04632FBE24ADFE01009C9AA8 /* Date+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		04C8BB2E24B081A00088A157 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				04C8BB2C24B081770088A157 /* UsersService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		04C8BB2F24B081AC0088A157 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				04C8BB3024B081B70088A157 /* UserDataModel.swift */,
+			);
+			path = "Data Model";
 			sourceTree = "<group>";
 		};
 		6CA7C2A3C92BEE7E50A606E5 /* Frameworks */ = {
@@ -414,6 +442,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04C8BB3524B08BE80088A157 /* usersList.json in Resources */,
 				044AEB7524ADB41500F9FC0F /* articles.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,6 +518,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04C8BB3124B081B70088A157 /* UserDataModel.swift in Sources */,
 				0444B5B824ACE9FB0093F974 /* ArticlesService.swift in Sources */,
 				0423320B24B0401500E711E5 /* DBUser+CoreDataProperties.swift in Sources */,
 				04632FBF24ADFE01009C9AA8 /* Date+Extensions.swift in Sources */,
@@ -510,6 +540,7 @@
 				04632FC124AE0593009C9AA8 /* ImageFetcher.swift in Sources */,
 				0444B5B224ACD4090093F974 /* APIEndpoint.swift in Sources */,
 				042331B524AFC16000E711E5 /* StoreManager.swift in Sources */,
+				04C8BB2D24B081770088A157 /* UsersService.swift in Sources */,
 				0444B5B624ACE5120093F974 /* NetworkRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,6 +553,7 @@
 				0423318824AE3D6800E711E5 /* ArticleViewModelTests.swift in Sources */,
 				044AEB6F24ACF0C000F9FC0F /* ArticlesServiceTests.swift in Sources */,
 				0444B5B424ACD6480093F974 /* APIEndpointTests.swift in Sources */,
+				04C8BB3324B082310088A157 /* UsersServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
