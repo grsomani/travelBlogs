@@ -42,12 +42,14 @@ struct UserDbManager {
         }
     }
     
-    func retreiveUsers() throws -> [UserDataModel]? {
+    func retreiveUsers(offset: Int) throws -> [UserDataModel]? {
         guard let context = StoreManager.managedObjectContext else {
             return nil
         }
         
         let request:NSFetchRequest<DBUser> = DBUser.fetchRequest()
+        request.fetchLimit = 10
+        request.fetchOffset = offset
         
         let users = try context.fetch(request)
         var data: [UserDataModel] = []

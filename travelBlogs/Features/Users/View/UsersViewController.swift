@@ -13,7 +13,11 @@ import Reachability
 class UsersViewController: UIViewController {
     
     @IBOutlet private weak var usersTable: UITableView!
+    
     private var currentPageNumber = 1
+    private var isLoading = false
+    private var endOfList = false
+
     private var usersList = [UserDataModel]()
     private var reachability = try? Reachability()
     private lazy var usersService = {
@@ -24,29 +28,48 @@ class UsersViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Users"
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if self.usersList.isEmpty {
-            if let reachability = self.reachability, reachability.connection != .unavailable {
-                self.fetchLiveUsers()
-            } else {
-                self.fetchFromDb()
-            }
+            fetchUsers()
+        }
+    }
+    
+    private func fetchUsers() {
+        if let reachability = self.reachability, reachability.connection != .unavailable {
+            self.fetchLiveUsers()
+        } else {
+            self.fetchFromDb()
         }
     }
     
     private func fetchLiveUsers() {
+        //Existing API call running
+        if isLoading { return }
+        
         let usersEndpoint = APIEndpoint.users(page: self.currentPageNumber)
         
-        MKProgress.show(true)
+        if currentPageNumber == 1 {
+            MKProgress.show(true)
+        }
+        
+        self.isLoading = true
         self.usersService.loadUsers(endpoint: usersEndpoint) { (users, error) in
             
             MKProgress.hide()
-            
+            self.usersTable.tableFooterView?.isHidden = true
+
             guard let newUsers = users else {
                 return
             }
+            
+            if newUsers.count == 0 {
+                self.endOfList = true
+                return
+            }
+            
+            self.isLoading = false
             
             try? UserDbManager().store(users: newUsers)
             
@@ -58,9 +81,14 @@ class UsersViewController: UIViewController {
     
     private func fetchFromDb() {
         do {
-            let users = try UserDbManager().retreiveUsers()
+            let users = try UserDbManager().retreiveUsers(offset: self.usersList.count)
             guard let newUsers = users else {
                 //ToDo: Show No Internet error.
+                return
+            }
+            
+            if newUsers.count == 0 {
+                self.endOfList = true
                 return
             }
             
@@ -100,5 +128,16 @@ extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
             return
         }
         self.navigationController?.pushViewController(userDetailVC, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == self.usersList.count-1 && !self.endOfList {
+            let indicator = UIActivityIndicatorView(style: .gray)
+            indicator.startAnimating()
+            indicator.frame = CGRect(origin: .zero, size: CGSize(width: 50, height: 50))
+            tableView.tableFooterView = indicator
+            tableView.tableFooterView?.isHidden = false
+            self.fetchUsers()
+        }
     }
 }
