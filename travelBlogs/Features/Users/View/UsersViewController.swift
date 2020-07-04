@@ -29,14 +29,14 @@ class UsersViewController: UIViewController {
         super.viewWillAppear(animated)
         if self.usersList.isEmpty {
             if let reachability = self.reachability, reachability.connection != .unavailable {
-                self.fetchLiveArticles()
+                self.fetchLiveUsers()
             } else {
                 self.fetchFromDb()
             }
         }
     }
     
-    private func fetchLiveArticles() {
+    private func fetchLiveUsers() {
         let usersEndpoint = APIEndpoint.users(page: self.currentPageNumber)
         
         MKProgress.show(true)
@@ -48,6 +48,8 @@ class UsersViewController: UIViewController {
                 return
             }
             
+            try? UserDbManager().store(users: newUsers)
+            
             self.usersList.append(contentsOf: newUsers)
             self.currentPageNumber += 1
             self.usersTable.reloadData()
@@ -55,7 +57,19 @@ class UsersViewController: UIViewController {
     }
     
     private func fetchFromDb() {
-        //ToDo
+        do {
+            let users = try UserDbManager().retreiveUsers()
+            guard let newUsers = users else {
+                //ToDo: Show No Internet error.
+                return
+            }
+            
+            self.usersList.append(contentsOf: newUsers)
+            self.currentPageNumber += 1
+            self.usersTable.reloadData()
+        } catch {
+            //ToDo: Show No Internet error.
+        }
     }
 }
 
