@@ -36,4 +36,8 @@ struct UserViewModel {
     var userCity: String {
         return self.dataModel.city ?? ""
     }
+    
+    var about: String {
+        return self.dataModel.about ?? ""
+    }
 }

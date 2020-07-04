@@ -93,4 +93,12 @@ extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
         cell.selectionStyle = .none
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let userData = self.usersList[indexPath.row]
+        guard let userDetailVC = UserDetailViewController.initWithStoryboard(userData) else {
+            return
+        }
+        self.navigationController?.pushViewController(userDetailVC, animated: true)
+    }
 }
