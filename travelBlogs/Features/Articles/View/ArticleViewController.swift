@@ -45,9 +45,14 @@ class ArticleViewController: UIViewController {
             MKProgress.hide()
             
             guard let newArticles = articles else {
-                //ToDO: Handling error like error message, fetching data from DB, etc
                 return
             }
+            
+            //Delete old entries
+            let dbManager = ArticleDbManager()
+            try? dbManager.removeAllArticles()
+            try? dbManager.store(articles: newArticles)
+            
             self.articlesList.append(contentsOf: newArticles)
             self.currentPageNumber += 1
             self.articlesTable.reloadData()
@@ -55,7 +60,18 @@ class ArticleViewController: UIViewController {
     }
     
     private func fetchFromDb() {
-        
+        do {
+            let articles = try ArticleDbManager().retreiveArticles()
+            guard let newArticles = articles else {
+                return
+            }
+            
+            self.articlesList.append(contentsOf: newArticles)
+            self.currentPageNumber += 1
+            self.articlesTable.reloadData()
+        } catch {
+            print("Failue")
+        }
     }
 }
 

@@ -61,10 +61,12 @@ struct ArticleDbManager {
         
         let articles = try context.fetch(request)
         var data: [ArticleDataModel] = []
-        var articleUsers: [User] = []
-        var articleMedia: [Media] = []
 
         for article in articles {
+            
+            var articleUsers: [User] = []
+            var articleMedia: [Media] = []
+
             article.user?.forEach({ user in
                 if let userData = user as? DBUser {
                     articleUsers.append(userData.convertToDataModel())
@@ -88,6 +90,19 @@ struct ArticleDbManager {
             )
         }
         return data
+    }
+    
+    func removeAllArticles() throws {
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "DBArticle")
+        let request = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        guard let storeCoordinator = StoreManager.persistentStoreCoordinator,
+            let context = StoreManager.managedObjectContext else {
+                return
+        }
+        
+        try storeCoordinator.execute(request, with: context)
     }
     
     
