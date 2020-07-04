@@ -42,6 +42,7 @@
 		04C8BB3324B082310088A157 /* UsersServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8BB3224B082310088A157 /* UsersServiceTests.swift */; };
 		04C8BB3524B08BE80088A157 /* usersList.json in Resources */ = {isa = PBXBuildFile; fileRef = 04C8BB3424B08BE80088A157 /* usersList.json */; };
 		04C8BB3724B098470088A157 /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8BB3624B098470088A157 /* UsersTableViewCell.swift */; };
+		04C8BB3A24B09B390088A157 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8BB3924B09B390088A157 /* UserViewModel.swift */; };
 		6FC76468E1EF32CFBAE617CB /* Pods_travelBlogsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B608984229CA136C37F17069 /* Pods_travelBlogsTests.framework */; };
 		CED00FB33C445BF589CA95C8 /* Pods_travelBlogs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E92ECA83B04F51835B9867E4 /* Pods_travelBlogs.framework */; };
 /* End PBXBuildFile section */
@@ -97,6 +98,7 @@
 		04C8BB3224B082310088A157 /* UsersServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersServiceTests.swift; sourceTree = "<group>"; };
 		04C8BB3424B08BE80088A157 /* usersList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = usersList.json; sourceTree = "<group>"; };
 		04C8BB3624B098470088A157 /* UsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
+		04C8BB3924B09B390088A157 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		269118588EAD5764D48E5AB8 /* Pods-travelBlogs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-travelBlogs.debug.xcconfig"; path = "Target Support Files/Pods-travelBlogs/Pods-travelBlogs.debug.xcconfig"; sourceTree = "<group>"; };
 		5FDDF26E1BF3716827302467 /* Pods-travelBlogsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-travelBlogsTests.release.xcconfig"; path = "Target Support Files/Pods-travelBlogsTests/Pods-travelBlogsTests.release.xcconfig"; sourceTree = "<group>"; };
 		B608984229CA136C37F17069 /* Pods_travelBlogsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_travelBlogsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +146,7 @@
 		0423318924AFAEAC00E711E5 /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				04C8BB3824B09B0E0088A157 /* View Model */,
 				04C8BB2F24B081AC0088A157 /* Data Model */,
 				04C8BB2E24B081A00088A157 /* Service */,
 				0423318A24AFAEB600E711E5 /* View */,
@@ -329,6 +332,14 @@
 				04C8BB3024B081B70088A157 /* UserDataModel.swift */,
 			);
 			path = "Data Model";
+			sourceTree = "<group>";
+		};
+		04C8BB3824B09B0E0088A157 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				04C8BB3924B09B390088A157 /* UserViewModel.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 		6CA7C2A3C92BEE7E50A606E5 /* Frameworks */ = {
@@ -530,6 +541,7 @@
 				04632FB924ADF13C009C9AA8 /* ArticleTableViewCell.swift in Sources */,
 				044AEB7124ACF15F00F9FC0F /* NetworkError.swift in Sources */,
 				04632FBC24ADF4CC009C9AA8 /* ArticleViewModel.swift in Sources */,
+				04C8BB3A24B09B390088A157 /* UserViewModel.swift in Sources */,
 				0423320A24B0401500E711E5 /* DBUser+CoreDataClass.swift in Sources */,
 				042331B724AFC24900E711E5 /* ArticleDbManager.swift in Sources */,
 				0444B58C24ACC87C0093F974 /* ArticleViewController.swift in Sources */,

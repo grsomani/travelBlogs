@@ -69,6 +69,13 @@ extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: UsersTableViewCell.reuseIdentifier) as? UsersTableViewCell else {
             return UITableViewCell()
         }
+        
+        if usersList.count > indexPath.row {
+            let currentUserData = self.usersList[indexPath.row]
+            let viewModel = UserViewModel(dataModel: currentUserData)
+            cell.assign(viewModel: viewModel)
+        }
+        
         cell.selectionStyle = .none
         return cell
     }
