@@ -29,9 +29,9 @@ struct Media: Codable {
 }
 
 struct User: Codable {
-    let id, blogID, createdAt, name: String
-    let avatar: String
-    let lastname, city, designation, about: String
+    let id, blogID, createdAt, name: String?
+    let avatar: String?
+    let lastname, city, designation, about: String?
 
     enum CodingKeys: String, CodingKey {
         case blogID = "blogId"

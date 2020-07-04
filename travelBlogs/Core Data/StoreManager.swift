@@ -6,7 +6,8 @@
 //  Copyright © 2020 Ganesh Somani. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import CoreData
 
 class StoreManager {
     

@@ -9,8 +9,15 @@
 /* Begin PBXBuildFile section */
 		0423318824AE3D6800E711E5 /* ArticleViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0423318724AE3D6800E711E5 /* ArticleViewModelTests.swift */; };
 		0423318C24AFAECF00E711E5 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0423318B24AFAECF00E711E5 /* UsersViewController.swift */; };
-		042331B324AFB34500E711E5 /* travelBlogs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 042331B124AFB34500E711E5 /* travelBlogs.xcdatamodeld */; };
 		042331B524AFC16000E711E5 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042331B424AFC16000E711E5 /* StoreManager.swift */; };
+		042331B724AFC24900E711E5 /* ArticleDbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042331B624AFC24900E711E5 /* ArticleDbManager.swift */; };
+		042331DC24B03AE700E711E5 /* travelBlogs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 042331DA24B03AE700E711E5 /* travelBlogs.xcdatamodeld */; };
+		0423320924B0401500E711E5 /* DBMedia+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0423320324B0401400E711E5 /* DBMedia+CoreDataProperties.swift */; };
+		0423320A24B0401500E711E5 /* DBUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0423320424B0401400E711E5 /* DBUser+CoreDataClass.swift */; };
+		0423320B24B0401500E711E5 /* DBUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0423320524B0401400E711E5 /* DBUser+CoreDataProperties.swift */; };
+		0423320C24B0401500E711E5 /* DBArticle+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0423320624B0401400E711E5 /* DBArticle+CoreDataProperties.swift */; };
+		0423320D24B0401500E711E5 /* DBArticle+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0423320724B0401400E711E5 /* DBArticle+CoreDataClass.swift */; };
+		0423320E24B0401500E711E5 /* DBMedia+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0423320824B0401400E711E5 /* DBMedia+CoreDataClass.swift */; };
 		0444B58824ACC87C0093F974 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444B58724ACC87C0093F974 /* AppDelegate.swift */; };
 		0444B58C24ACC87C0093F974 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444B58B24ACC87C0093F974 /* ArticleViewController.swift */; };
 		0444B58F24ACC87C0093F974 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0444B58D24ACC87C0093F974 /* Main.storyboard */; };
@@ -48,8 +55,15 @@
 		00F665A649E7BADF444F5F29 /* Pods-travelBlogsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-travelBlogsTests.debug.xcconfig"; path = "Target Support Files/Pods-travelBlogsTests/Pods-travelBlogsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0423318724AE3D6800E711E5 /* ArticleViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModelTests.swift; sourceTree = "<group>"; };
 		0423318B24AFAECF00E711E5 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
-		042331B224AFB34500E711E5 /* travelBlogs.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = travelBlogs.xcdatamodel; sourceTree = "<group>"; };
 		042331B424AFC16000E711E5 /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		042331B624AFC24900E711E5 /* ArticleDbManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDbManager.swift; sourceTree = "<group>"; };
+		042331DB24B03AE700E711E5 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		0423320324B0401400E711E5 /* DBMedia+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DBMedia+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0423320424B0401400E711E5 /* DBUser+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DBUser+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0423320524B0401400E711E5 /* DBUser+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DBUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0423320624B0401400E711E5 /* DBArticle+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DBArticle+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0423320724B0401400E711E5 /* DBArticle+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DBArticle+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0423320824B0401400E711E5 /* DBMedia+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DBMedia+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0444B58424ACC87C0093F974 /* travelBlogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = travelBlogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0444B58724ACC87C0093F974 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0444B58B24ACC87C0093F974 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
@@ -136,10 +150,25 @@
 		042331B024AFB32300E711E5 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				042331B124AFB34500E711E5 /* travelBlogs.xcdatamodeld */,
+				042331EA24B03D6600E711E5 /* Data Models */,
 				042331B424AFC16000E711E5 /* StoreManager.swift */,
+				042331B624AFC24900E711E5 /* ArticleDbManager.swift */,
+				042331DA24B03AE700E711E5 /* travelBlogs.xcdatamodeld */,
 			);
 			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		042331EA24B03D6600E711E5 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				0423320724B0401400E711E5 /* DBArticle+CoreDataClass.swift */,
+				0423320624B0401400E711E5 /* DBArticle+CoreDataProperties.swift */,
+				0423320824B0401400E711E5 /* DBMedia+CoreDataClass.swift */,
+				0423320324B0401400E711E5 /* DBMedia+CoreDataProperties.swift */,
+				0423320424B0401400E711E5 /* DBUser+CoreDataClass.swift */,
+				0423320524B0401400E711E5 /* DBUser+CoreDataProperties.swift */,
+			);
+			path = "Data Models";
 			sourceTree = "<group>";
 		};
 		0444B57B24ACC87C0093F974 = {
@@ -461,20 +490,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				0444B5B824ACE9FB0093F974 /* ArticlesService.swift in Sources */,
+				0423320B24B0401500E711E5 /* DBUser+CoreDataProperties.swift in Sources */,
 				04632FBF24ADFE01009C9AA8 /* Date+Extensions.swift in Sources */,
 				0423318C24AFAECF00E711E5 /* UsersViewController.swift in Sources */,
 				04632FB924ADF13C009C9AA8 /* ArticleTableViewCell.swift in Sources */,
 				044AEB7124ACF15F00F9FC0F /* NetworkError.swift in Sources */,
 				04632FBC24ADF4CC009C9AA8 /* ArticleViewModel.swift in Sources */,
+				0423320A24B0401500E711E5 /* DBUser+CoreDataClass.swift in Sources */,
+				042331B724AFC24900E711E5 /* ArticleDbManager.swift in Sources */,
 				0444B58C24ACC87C0093F974 /* ArticleViewController.swift in Sources */,
+				0423320D24B0401500E711E5 /* DBArticle+CoreDataClass.swift in Sources */,
 				0444B5B024ACD2E70093F974 /* Endpoint.swift in Sources */,
+				0423320924B0401500E711E5 /* DBMedia+CoreDataProperties.swift in Sources */,
 				0444B58824ACC87C0093F974 /* AppDelegate.swift in Sources */,
 				0444B5BA24ACEDA90093F974 /* ArticleDataModel.swift in Sources */,
+				0423320C24B0401500E711E5 /* DBArticle+CoreDataProperties.swift in Sources */,
+				0423320E24B0401500E711E5 /* DBMedia+CoreDataClass.swift in Sources */,
+				042331DC24B03AE700E711E5 /* travelBlogs.xcdatamodeld in Sources */,
 				04632FC124AE0593009C9AA8 /* ImageFetcher.swift in Sources */,
 				0444B5B224ACD4090093F974 /* APIEndpoint.swift in Sources */,
 				042331B524AFC16000E711E5 /* StoreManager.swift in Sources */,
 				0444B5B624ACE5120093F974 /* NetworkRequest.swift in Sources */,
-				042331B324AFB34500E711E5 /* travelBlogs.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -748,12 +784,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		042331B124AFB34500E711E5 /* travelBlogs.xcdatamodeld */ = {
+		042331DA24B03AE700E711E5 /* travelBlogs.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				042331B224AFB34500E711E5 /* travelBlogs.xcdatamodel */,
+				042331DB24B03AE700E711E5 /* Model.xcdatamodel */,
 			);
-			currentVersion = 042331B224AFB34500E711E5 /* travelBlogs.xcdatamodel */;
+			currentVersion = 042331DB24B03AE700E711E5 /* Model.xcdatamodel */;
 			path = travelBlogs.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
