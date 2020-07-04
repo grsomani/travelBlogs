@@ -13,7 +13,11 @@ import Reachability
 class ArticleViewController: UIViewController {
     
     @IBOutlet private weak var articlesTable: UITableView!
+    
     private var currentPageNumber = 1
+    private var isLoading = false
+    private var endOfList = false
+    
     private var articlesList = [ArticleDataModel]()
     private var reachability = try? Reachability()
     private lazy var articlesService = {
@@ -28,26 +32,45 @@ class ArticleViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if self.articlesList.isEmpty {
-            if let reachability = self.reachability, reachability.connection != .unavailable {
-                self.fetchLiveArticles()
-            } else {
-                self.fetchFromDb()
-            }
+            self.fetchArticles()
+        }
+    }
+    
+    private func fetchArticles() {
+        if let reachability = self.reachability, reachability.connection != .unavailable {
+            self.fetchLiveArticles()
+        } else {
+            self.fetchFromDb()
         }
     }
     
     private func fetchLiveArticles() {
+        //Existing API call running
+        if isLoading { return }
+        
         let articleEndpoint = APIEndpoint.article(page: self.currentPageNumber)
         
-        MKProgress.show(true)
+        if currentPageNumber == 1 {
+            MKProgress.show(true)
+        }
+        
+        self.isLoading = true
         self.articlesService.loadArticles(endpoint: articleEndpoint) { (articles, error) in
             
             MKProgress.hide()
+            self.articlesTable.tableFooterView?.isHidden = true
             
             guard let newArticles = articles else {
                 return
             }
             
+            if newArticles.count == 0 {
+                self.endOfList = true
+                return
+            }
+            
+            self.isLoading = false
+
             try? ArticleDbManager().store(articles: newArticles)
             
             self.articlesList.append(contentsOf: newArticles)
@@ -58,9 +81,14 @@ class ArticleViewController: UIViewController {
     
     private func fetchFromDb() {
         do {
-            let articles = try ArticleDbManager().retreiveArticles()
+            let articles = try ArticleDbManager().retreiveArticles(offset: self.articlesList.count)
             guard let newArticles = articles else {
                 //ToDo: Show No Internet error.
+                return
+            }
+            
+            if newArticles.count == 0 {
+                self.endOfList = true
                 return
             }
             
@@ -93,4 +121,16 @@ extension ArticleViewController: UITableViewDataSource, UITableViewDelegate {
         cell.selectionStyle = .none
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == self.articlesList.count-1 && !self.endOfList {
+            let indicator = UIActivityIndicatorView(style: .gray)
+            indicator.startAnimating()
+            indicator.frame = CGRect(origin: .zero, size: CGSize(width: 50, height: 50))
+            tableView.tableFooterView = indicator
+            tableView.tableFooterView?.isHidden = false
+            self.fetchArticles()
+        }
+    }
+    
 }

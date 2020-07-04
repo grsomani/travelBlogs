@@ -58,12 +58,14 @@ struct ArticleDbManager {
         }
     }
     
-    func retreiveArticles() throws -> [ArticleDataModel]? {
+    func retreiveArticles(offset: Int) throws -> [ArticleDataModel]? {
         guard let context = StoreManager.managedObjectContext else {
             return nil
         }
         
         let request:NSFetchRequest<DBArticle> = DBArticle.fetchRequest()
+        request.fetchLimit = 10
+        request.fetchOffset = offset
         
         let articles = try context.fetch(request)
         var data: [ArticleDataModel] = []
