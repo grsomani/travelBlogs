@@ -11,12 +11,14 @@ Store items to database and fetch them in-case of network failure.
  - Core Data implementation to store articles and users.
  - iPhone and iPad with orientation support.
  - Dark Mode support.
+ - Pagination and offset to fetch correct next page from local database.
 
-# Areas on improvement:
- - Pagination in list.
- - Saving all pages and retrieving data from db when network fails during scrolling.
+## Areas on improvement:
  - Database normalisation as users in article and users in user list have same data.
  - Inverse linking of database (Deletion of users to delete articles)
+ 
+ ## Know issues:
+ - On Initial table load, willDisplay cause API call for second page too.
 
 
 ## References: 
