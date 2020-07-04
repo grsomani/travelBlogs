@@ -9,4 +9,7 @@
 import Foundation
 
 struct UserDataModel: Codable {
+    let id, createdAt, name: String?
+    let avatar: String?
+    let lastname, city, designation, about: String?
 }
