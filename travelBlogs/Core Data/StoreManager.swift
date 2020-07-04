@@ -31,4 +31,14 @@ class StoreManager {
         }
         return nil
     }
+    
+    static func entityExist(id: String,
+                            entityName: String,
+                            context: NSManagedObjectContext) throws -> Bool {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+        
+        let res = try context.fetch(fetchRequest)
+        return res.count != 0
+    }
 }

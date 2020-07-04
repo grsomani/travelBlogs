@@ -48,10 +48,7 @@ class ArticleViewController: UIViewController {
                 return
             }
             
-            //Delete old entries
-            let dbManager = ArticleDbManager()
-            try? dbManager.removeAllArticles()
-            try? dbManager.store(articles: newArticles)
+            try? ArticleDbManager().store(articles: newArticles)
             
             self.articlesList.append(contentsOf: newArticles)
             self.currentPageNumber += 1

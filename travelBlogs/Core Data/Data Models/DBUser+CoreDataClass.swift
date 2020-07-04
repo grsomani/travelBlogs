@@ -23,4 +23,15 @@ public class DBUser: NSManagedObject {
                     designation: self.designation,
                     about: self.about)
     }
+    
+    func convertToUserDataModel() -> UserDataModel {
+        return UserDataModel(id: self.id,
+                             createdAt: self.createdAt,
+                             name: self.name,
+                             avatar: self.avatar,
+                             lastname: self.lastName,
+                             city: self.city,
+                             designation: self.designation,
+                             about: self.about)
+    }
 }

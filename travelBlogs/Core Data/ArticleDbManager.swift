@@ -21,6 +21,12 @@ struct ArticleDbManager {
             
             for article in articles {
                 
+                if try StoreManager.entityExist(id: article.id ?? "",
+                                     entityName: "DBArticle",
+                                     context: context) {
+                    continue
+                }
+                
                 let articleToAdd = DBArticle(entity: articleEntity,
                                            insertInto: context)
                 articleToAdd.id = article.id
@@ -90,19 +96,6 @@ struct ArticleDbManager {
             )
         }
         return data
-    }
-    
-    func removeAllArticles() throws {
-        
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "DBArticle")
-        let request = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        
-        guard let storeCoordinator = StoreManager.persistentStoreCoordinator,
-            let context = StoreManager.managedObjectContext else {
-                return
-        }
-        
-        try storeCoordinator.execute(request, with: context)
     }
     
     
