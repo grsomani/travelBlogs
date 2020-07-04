@@ -12,4 +12,12 @@ import CoreData
 @objc(DBMedia)
 public class DBMedia: NSManagedObject {
 
+    func convertToDataModel() -> Media {
+        return Media(id: self.id,
+                     blogID: self.blogID,
+                     createdAt: self.createdAt,
+                     image: self.image,
+                     title: self.title,
+                     url: self.url)
+    }
 }

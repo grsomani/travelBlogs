@@ -52,6 +52,45 @@ struct ArticleDbManager {
         }
     }
     
+    func retreiveArticles() throws -> [ArticleDataModel]? {
+        guard let context = StoreManager.managedObjectContext else {
+            return nil
+        }
+        
+        let request:NSFetchRequest<DBArticle> = DBArticle.fetchRequest()
+        
+        let articles = try context.fetch(request)
+        var data: [ArticleDataModel] = []
+        var articleUsers: [User] = []
+        var articleMedia: [Media] = []
+
+        for article in articles {
+            article.user?.forEach({ user in
+                if let userData = user as? DBUser {
+                    articleUsers.append(userData.convertToDataModel())
+                }
+            })
+            
+            article.media?.forEach({ media in
+                if let mediaData = media as? DBMedia {
+                    articleMedia.append(mediaData.convertToDataModel())
+                }
+            })
+            
+            data.append(
+                ArticleDataModel(id: article.id,
+                                 createdAt: article.createdAt,
+                                 content: article.content,
+                                 comments: Int(article.comments),
+                                 likes: Int(article.likes),
+                                 media: articleMedia,
+                                 user: articleUsers)
+            )
+        }
+        return data
+    }
+    
+    
     private func createDBUser(_ user: User, entity: NSEntityDescription, context: NSManagedObjectContext) -> DBUser {
         let userToAdd = DBUser(entity: entity,
                                insertInto: context)
