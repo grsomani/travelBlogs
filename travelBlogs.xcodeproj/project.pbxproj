@@ -45,6 +45,8 @@
 		04C8BB3A24B09B390088A157 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8BB3924B09B390088A157 /* UserViewModel.swift */; };
 		04C8BB3C24B09F5D0088A157 /* UserDbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8BB3B24B09F5D0088A157 /* UserDbManager.swift */; };
 		04C8BB3E24B0CB660088A157 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8BB3D24B0CB660088A157 /* UserDetailViewController.swift */; };
+		04C8BB4024B1E6040088A157 /* UserDataModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8BB3F24B1E6040088A157 /* UserDataModelTests.swift */; };
+		04C8BB4224B1E6D80088A157 /* UserViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8BB4124B1E6D80088A157 /* UserViewModelTests.swift */; };
 		6FC76468E1EF32CFBAE617CB /* Pods_travelBlogsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B608984229CA136C37F17069 /* Pods_travelBlogsTests.framework */; };
 		CED00FB33C445BF589CA95C8 /* Pods_travelBlogs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E92ECA83B04F51835B9867E4 /* Pods_travelBlogs.framework */; };
 /* End PBXBuildFile section */
@@ -103,6 +105,8 @@
 		04C8BB3924B09B390088A157 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		04C8BB3B24B09F5D0088A157 /* UserDbManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDbManager.swift; sourceTree = "<group>"; };
 		04C8BB3D24B0CB660088A157 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		04C8BB3F24B1E6040088A157 /* UserDataModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModelTests.swift; sourceTree = "<group>"; };
+		04C8BB4124B1E6D80088A157 /* UserViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModelTests.swift; sourceTree = "<group>"; };
 		269118588EAD5764D48E5AB8 /* Pods-travelBlogs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-travelBlogs.debug.xcconfig"; path = "Target Support Files/Pods-travelBlogs/Pods-travelBlogs.debug.xcconfig"; sourceTree = "<group>"; };
 		5FDDF26E1BF3716827302467 /* Pods-travelBlogsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-travelBlogsTests.release.xcconfig"; path = "Target Support Files/Pods-travelBlogsTests/Pods-travelBlogsTests.release.xcconfig"; sourceTree = "<group>"; };
 		B608984229CA136C37F17069 /* Pods_travelBlogsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_travelBlogsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -233,6 +237,8 @@
 				044AEB7424ADB41500F9FC0F /* articles.json */,
 				04C8BB3424B08BE80088A157 /* usersList.json */,
 				044AEB7224ADAF7000F9FC0F /* ArticleDataModelTests.swift */,
+				04C8BB3F24B1E6040088A157 /* UserDataModelTests.swift */,
+				04C8BB4124B1E6D80088A157 /* UserViewModelTests.swift */,
 				0444B5B324ACD6480093F974 /* APIEndpointTests.swift */,
 				044AEB6E24ACF0C000F9FC0F /* ArticlesServiceTests.swift */,
 				0423318724AE3D6800E711E5 /* ArticleViewModelTests.swift */,
@@ -576,7 +582,9 @@
 				044AEB7324ADAF7000F9FC0F /* ArticleDataModelTests.swift in Sources */,
 				0423318824AE3D6800E711E5 /* ArticleViewModelTests.swift in Sources */,
 				044AEB6F24ACF0C000F9FC0F /* ArticlesServiceTests.swift in Sources */,
+				04C8BB4224B1E6D80088A157 /* UserViewModelTests.swift in Sources */,
 				0444B5B424ACD6480093F974 /* APIEndpointTests.swift in Sources */,
+				04C8BB4024B1E6040088A157 /* UserDataModelTests.swift in Sources */,
 				04C8BB3324B082310088A157 /* UsersServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -731,6 +739,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VBTP5Q9WE9;
 				INFOPLIST_FILE = "$(SRCROOT)/travelBlogs/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -750,6 +759,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VBTP5Q9WE9;
 				INFOPLIST_FILE = "$(SRCROOT)/travelBlogs/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
