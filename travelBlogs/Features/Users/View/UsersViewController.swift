@@ -13,7 +13,8 @@ import Reachability
 class UsersViewController: UIViewController {
     
     @IBOutlet private weak var usersTable: UITableView!
-    
+    @IBOutlet private weak var noNetworkLabel: UILabel!
+
     private var currentPageNumber = 1
     private var isLoading = false
     private var endOfList = false
@@ -27,17 +28,31 @@ class UsersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Users"
+        
+        self.fetchUsers()
+        self.setupNetworkChecker()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if self.usersList.isEmpty {
-            fetchUsers()
+        try? self.reachability?.startNotifier()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.reachability?.stopNotifier()
+    }
+    
+    private func setupNetworkChecker() {
+        self.reachability?.whenReachable = { reachability in
+            self.fetchUsers()
         }
     }
     
     private func fetchUsers() {
-        if let reachability = self.reachability, reachability.connection != .unavailable {
+        if let reachability = try? Reachability(),
+            reachability.connection != .unavailable {
             self.fetchLiveUsers()
         } else {
             self.fetchFromDb()
@@ -64,15 +79,12 @@ class UsersViewController: UIViewController {
                 return
             }
             
-            if newUsers.count == 0 {
-                self.endOfList = true
-                return
-            }
-            
             self.isLoading = false
+            self.endOfList = newUsers.count == 0
             
             try? UserDbManager().store(users: newUsers)
             
+            self.showData()
             self.usersList.append(contentsOf: newUsers)
             self.currentPageNumber += 1
             self.usersTable.reloadData()
@@ -83,20 +95,35 @@ class UsersViewController: UIViewController {
         do {
             let users = try UserDbManager().retreiveUsers(offset: self.usersList.count)
             guard let newUsers = users else {
-                //ToDo: Show No Internet error.
                 return
             }
             
             if newUsers.count == 0 {
                 self.endOfList = true
+                self.showNetworkIssueIfRequired()
                 return
             }
             
+            self.showData()
             self.usersList.append(contentsOf: newUsers)
             self.currentPageNumber += 1
             self.usersTable.reloadData()
         } catch {
-            //ToDo: Show No Internet error.
+            self.showNetworkIssueIfRequired()
+        }
+    }
+    
+    private func showData() {
+        self.noNetworkLabel.isHidden = true
+        self.usersTable.isHidden = false
+    }
+    
+    private func showNetworkIssueIfRequired() {
+        if self.usersList.count == 0,
+            let reachability = try? Reachability(),
+            reachability.connection == .unavailable {
+            self.noNetworkLabel.isHidden = false
+            self.usersTable.isHidden = true
         }
     }
 }

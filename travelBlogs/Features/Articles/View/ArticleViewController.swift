@@ -13,6 +13,7 @@ import Reachability
 class ArticleViewController: UIViewController {
     
     @IBOutlet private weak var articlesTable: UITableView!
+    @IBOutlet private weak var noNetworkLabel: UILabel!
     
     private var currentPageNumber = 1
     private var isLoading = false
@@ -27,17 +28,30 @@ class ArticleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Articles"
+        
+        self.fetchArticles()
+        self.setupNetworkChecker()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if self.articlesList.isEmpty {
+        try? self.reachability?.startNotifier()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.reachability?.stopNotifier()
+    }
+    
+    private func setupNetworkChecker() {
+        self.reachability?.whenReachable = { reachability in
             self.fetchArticles()
         }
     }
     
     private func fetchArticles() {
-        if let reachability = self.reachability, reachability.connection != .unavailable {
+        if let reachability = try? Reachability(),
+            reachability.connection != .unavailable {
             self.fetchLiveArticles()
         } else {
             self.fetchFromDb()
@@ -64,15 +78,12 @@ class ArticleViewController: UIViewController {
                 return
             }
             
-            if newArticles.count == 0 {
-                self.endOfList = true
-                return
-            }
-            
             self.isLoading = false
+            self.endOfList = newArticles.count == 0
 
             try? ArticleDbManager().store(articles: newArticles)
             
+            self.showData()
             self.articlesList.append(contentsOf: newArticles)
             self.currentPageNumber += 1
             self.articlesTable.reloadData()
@@ -83,20 +94,35 @@ class ArticleViewController: UIViewController {
         do {
             let articles = try ArticleDbManager().retreiveArticles(offset: self.articlesList.count)
             guard let newArticles = articles else {
-                //ToDo: Show No Internet error.
                 return
             }
             
             if newArticles.count == 0 {
                 self.endOfList = true
+                self.showNetworkIssueIfRequired()
                 return
             }
             
+            self.showData()
             self.articlesList.append(contentsOf: newArticles)
             self.currentPageNumber += 1
             self.articlesTable.reloadData()
         } catch {
-            //ToDo: Show No Internet error.
+            self.showNetworkIssueIfRequired()
+        }
+    }
+    
+    private func showData() {
+        self.noNetworkLabel.isHidden = true
+        self.articlesTable.isHidden = false
+    }
+    
+    private func showNetworkIssueIfRequired() {
+        if self.articlesList.count == 0,
+            let reachability = try? Reachability(),
+            reachability.connection == .unavailable {
+            self.noNetworkLabel.isHidden = false
+            self.articlesTable.isHidden = true
         }
     }
 }

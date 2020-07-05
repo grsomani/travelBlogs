@@ -16,7 +16,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NL7-Nf-zaN">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Internet Connection!!!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGW-Jc-3Wu">
+                                <rect key="frame" x="41.5" y="400.5" width="331" height="95.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NL7-Nf-zaN">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -123,7 +129,7 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="SdX-5t-g5N" secondAttribute="bottom" constant="5" id="4MP-YC-vdQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="SdX-5t-g5N" secondAttribute="bottom" priority="250" constant="5" id="4MP-YC-vdQ"/>
                                                 <constraint firstItem="SdX-5t-g5N" firstAttribute="leading" secondItem="umQ-XC-5af" secondAttribute="leading" constant="15" id="Uer-EJ-ZTV"/>
                                                 <constraint firstItem="SdX-5t-g5N" firstAttribute="top" secondItem="umQ-XC-5af" secondAttribute="top" constant="5" id="a6h-Ls-xb6"/>
                                                 <constraint firstAttribute="trailing" secondItem="SdX-5t-g5N" secondAttribute="trailing" constant="15" id="uho-D4-FLV"/>
@@ -151,6 +157,9 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="cGW-Jc-3Wu" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="L9V-D0-IzL"/>
+                            <constraint firstItem="cGW-Jc-3Wu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="NDE-rO-g9S"/>
+                            <constraint firstItem="cGW-Jc-3Wu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Og7-OC-XHP"/>
                             <constraint firstItem="NL7-Nf-zaN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Q3p-x1-rey"/>
                             <constraint firstItem="NL7-Nf-zaN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aoK-Zz-ywc">
                                 <variation key="heightClass=regular-widthClass=regular" constant="128"/>
@@ -165,6 +174,7 @@
                     <navigationItem key="navigationItem" id="7ff-jv-wke"/>
                     <connections>
                         <outlet property="articlesTable" destination="NL7-Nf-zaN" id="JrP-Kf-i9h"/>
+                        <outlet property="noNetworkLabel" destination="cGW-Jc-3Wu" id="8Ph-tv-pPW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -179,7 +189,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Acv-WQ-q5B">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Internet Connection!!!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdo-Kz-8Qb">
+                                <rect key="frame" x="41.5" y="400.5" width="331" height="95.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Acv-WQ-q5B">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -250,6 +266,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="zdo-Kz-8Qb" firstAttribute="width" secondItem="9c2-Kv-FHJ" secondAttribute="width" multiplier="0.8" id="4gG-9T-KN7"/>
                             <constraint firstItem="pAQ-3w-xna" firstAttribute="bottom" secondItem="Acv-WQ-q5B" secondAttribute="bottom" id="LMr-gW-DEL"/>
                             <constraint firstItem="Acv-WQ-q5B" firstAttribute="top" secondItem="pAQ-3w-xna" secondAttribute="top" id="Xqq-ws-zJF"/>
                             <constraint firstItem="Acv-WQ-q5B" firstAttribute="leading" secondItem="pAQ-3w-xna" secondAttribute="leading" id="fFS-km-yNf">
@@ -258,11 +275,14 @@
                             <constraint firstItem="pAQ-3w-xna" firstAttribute="trailing" secondItem="Acv-WQ-q5B" secondAttribute="trailing" id="toW-ha-4T4">
                                 <variation key="heightClass=regular-widthClass=regular" constant="128"/>
                             </constraint>
+                            <constraint firstItem="zdo-Kz-8Qb" firstAttribute="centerY" secondItem="9c2-Kv-FHJ" secondAttribute="centerY" id="xeg-kC-Oir"/>
+                            <constraint firstItem="zdo-Kz-8Qb" firstAttribute="centerX" secondItem="9c2-Kv-FHJ" secondAttribute="centerX" id="ywQ-yB-Op5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pAQ-3w-xna"/>
                     </view>
                     <navigationItem key="navigationItem" id="h1E-hA-IFz"/>
                     <connections>
+                        <outlet property="noNetworkLabel" destination="zdo-Kz-8Qb" id="4rH-DB-iTN"/>
                         <outlet property="usersTable" destination="Acv-WQ-q5B" id="7H8-rd-da0"/>
                     </connections>
                 </viewController>
