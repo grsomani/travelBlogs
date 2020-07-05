@@ -12,6 +12,7 @@ Store items to database and fetch them in-case of network failure.
  - iPhone and iPad with orientation support.
  - Dark Mode support.
  - Pagination and offset to fetch correct next page from local database.
+ - Network change handler.
 
 ## Areas on improvement:
  - Database normalisation as users in article and users in user list have same data.
