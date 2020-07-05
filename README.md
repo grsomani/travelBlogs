@@ -27,3 +27,6 @@ Store items to database and fetch them in-case of network failure.
 - https://matteomanferdini.com/network-requests-rest-apis-ios-swift/
 - https://stackoverflow.com/questions/36376897/swift-2-0-format-1000s-into-a-friendly-ks
 - https://gist.github.com/amosavian/a05044e57c290b5e064f4f7acfc3b506
+
+
+Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
